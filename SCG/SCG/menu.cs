@@ -16,5 +16,15 @@ namespace SCG
         {
             InitializeComponent();
         }
+
+        private void entradaNoEstoqueSNFEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oRÇAMENTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
