@@ -26,5 +26,12 @@ namespace SCG
         {
 
         }
+
+        private void cadastroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cad_usuario frm = new cad_usuario();
+            frm.Show();
+            Visible = true;
+        }
     }
 }
