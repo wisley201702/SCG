@@ -21,5 +21,12 @@ namespace SCG
         {
 
         }
+
+        private void ok_Click(object sender, EventArgs e)
+        {
+            menu frm = new menu();
+            frm.Show();
+            Visible = false;
+        }
     }
 }

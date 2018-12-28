@@ -97,6 +97,7 @@
             this.ok.TabIndex = 3;
             this.ok.Text = "ok";
             this.ok.UseVisualStyleBackColor = true;
+            this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
             // cancelar
             // 
