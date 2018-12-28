@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SCG
 {
-    public partial class Login : Form
+    public partial class menu : Form
     {
-        public Login()
+        public menu()
         {
             InitializeComponent();
         }
