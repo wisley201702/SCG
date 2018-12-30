@@ -143,6 +143,7 @@
             this.alterar.TabIndex = 2;
             this.alterar.Text = "Alterar";
             this.alterar.UseVisualStyleBackColor = true;
+            this.alterar.Click += new System.EventHandler(this.alterar_Click);
             // 
             // label2
             // 
@@ -160,7 +161,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(88, 101);
+            this.label3.Location = new System.Drawing.Point(88, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 3;
@@ -171,7 +172,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(41, 127);
+            this.label4.Location = new System.Drawing.Point(41, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 4;
@@ -182,7 +183,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(98, 152);
+            this.label5.Location = new System.Drawing.Point(98, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 5;
@@ -197,7 +198,7 @@
             // 
             // senha
             // 
-            this.senha.Location = new System.Drawing.Point(135, 98);
+            this.senha.Location = new System.Drawing.Point(135, 128);
             this.senha.Name = "senha";
             this.senha.Size = new System.Drawing.Size(175, 20);
             this.senha.TabIndex = 7;
@@ -205,7 +206,7 @@
             // 
             // csenha
             // 
-            this.csenha.Location = new System.Drawing.Point(135, 124);
+            this.csenha.Location = new System.Drawing.Point(135, 154);
             this.csenha.Name = "csenha";
             this.csenha.Size = new System.Drawing.Size(175, 20);
             this.csenha.TabIndex = 8;
@@ -220,18 +221,24 @@
             "GERENTE",
             "CAIXA",
             "SUPERVISOR"});
-            this.tipo.Location = new System.Drawing.Point(135, 149);
+            this.tipo.Location = new System.Drawing.Point(135, 98);
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(155, 21);
             this.tipo.TabIndex = 9;
             // 
             // dgusuario
             // 
+            this.dgusuario.AllowUserToAddRows = false;
+            this.dgusuario.AllowUserToDeleteRows = false;
             this.dgusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgusuario.Location = new System.Drawing.Point(321, 63);
             this.dgusuario.Name = "dgusuario";
+            this.dgusuario.ReadOnly = true;
             this.dgusuario.Size = new System.Drawing.Size(353, 111);
             this.dgusuario.TabIndex = 10;
+            this.dgusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgusuario_CellDoubleClick);
+            this.dgusuario.SelectionChanged += new System.EventHandler(this.dgusuario_SelectionChanged);
+            this.dgusuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgusuario_MouseClick);
             // 
             // pictureBox1
             // 

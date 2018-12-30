@@ -83,11 +83,14 @@
             // 
             // usuario
             // 
+            this.usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.usuario.FormattingEnabled = true;
             this.usuario.Location = new System.Drawing.Point(211, 71);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(153, 21);
             this.usuario.TabIndex = 1;
+            this.usuario.SelectedIndexChanged += new System.EventHandler(this.usuario_SelectedIndexChanged);
             // 
             // ok
             // 
@@ -107,6 +110,7 @@
             this.cancelar.TabIndex = 4;
             this.cancelar.Text = "Cancelar";
             this.cancelar.UseVisualStyleBackColor = true;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
             // 
             // pictureBox1
             // 
@@ -148,10 +152,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox senha;
-        private System.Windows.Forms.ComboBox usuario;
         private System.Windows.Forms.Button ok;
         private System.Windows.Forms.Button cancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox usuario;
     }
 }
 
