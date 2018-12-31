@@ -71,6 +71,7 @@
             this.buscar.TabIndex = 15;
             this.buscar.Text = "Buscar";
             this.buscar.UseVisualStyleBackColor = true;
+            this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
             // id
             // 
@@ -96,6 +97,7 @@
             this.excluir.TabIndex = 13;
             this.excluir.Text = "Excluir";
             this.excluir.UseVisualStyleBackColor = true;
+            this.excluir.Click += new System.EventHandler(this.excluir_Click);
             // 
             // gravar
             // 
@@ -105,6 +107,7 @@
             this.gravar.TabIndex = 12;
             this.gravar.Text = "Gravar";
             this.gravar.UseVisualStyleBackColor = true;
+            this.gravar.Click += new System.EventHandler(this.gravar_Click);
             // 
             // cancelar
             // 
@@ -114,6 +117,7 @@
             this.cancelar.TabIndex = 11;
             this.cancelar.Text = "Cancelar";
             this.cancelar.UseVisualStyleBackColor = true;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
             // 
             // alterar
             // 
@@ -123,6 +127,7 @@
             this.alterar.TabIndex = 10;
             this.alterar.Text = "Alterar";
             this.alterar.UseVisualStyleBackColor = true;
+            this.alterar.Click += new System.EventHandler(this.alterar_Click);
             // 
             // novo
             // 
@@ -132,6 +137,7 @@
             this.novo.TabIndex = 8;
             this.novo.Text = "Novo";
             this.novo.UseVisualStyleBackColor = true;
+            this.novo.Click += new System.EventHandler(this.novo_Click);
             // 
             // pictureBox1
             // 
@@ -171,6 +177,7 @@
             this.dgusuario.ReadOnly = true;
             this.dgusuario.Size = new System.Drawing.Size(292, 111);
             this.dgusuario.TabIndex = 15;
+            this.dgusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgusuario_CellDoubleClick);
             // 
             // grupo
             // 
