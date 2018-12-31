@@ -51,6 +51,12 @@
     <Compile Include="cad_usuario.Designer.cs">
       <DependentUpon>cad_usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="grupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="grupo.Designer.cs">
+      <DependentUpon>grupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <EmbeddedResource Include="cad_usuario.resx">
       <DependentUpon>cad_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="grupo.resx">
+      <DependentUpon>grupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

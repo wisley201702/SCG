@@ -214,6 +214,7 @@
             // 
             // tipo
             // 
+            this.tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipo.FormattingEnabled = true;
             this.tipo.Items.AddRange(new object[] {
             "SUPORTE",
