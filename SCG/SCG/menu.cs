@@ -48,6 +48,9 @@ namespace SCG
         private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //int id_modulo = 2;
+            grupo frm = new grupo();
+            frm.Show();
+            Visible = true;
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)

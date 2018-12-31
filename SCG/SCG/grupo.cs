@@ -150,7 +150,7 @@ namespace SCG
                 else if (id.Text != "" && nome.Text != "")
                 {
                     Conn.Open();
-                    comando.CommandText = "UPDATE tbgrupo SET nome = '" + nome.Text +"'";
+                    comando.CommandText = "UPDATE tbgrupo SET nome = '" +nome.Text + "'where id_grupo='" + id.Text + "'";
                     comando.ExecuteNonQuery();
                     Conn.Close();
                     MessageBox.Show("Atualizado com sucesso!");
@@ -249,7 +249,7 @@ namespace SCG
         {
             string _strconn = Settings.Default.SCGConnectionString;
             Conn.Open();
-            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbusuario";
+            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbgrupo";
             SqlConnection objconnect = null;
             SqlCommand objcomando = null;
             objconnect = new SqlConnection(_strconn);
@@ -278,7 +278,7 @@ namespace SCG
         {
             string _strconn = Settings.Default.SCGConnectionString;
             Conn.Open();
-            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbgrupo where id_login  = '" + id.Text + "'";
+            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbgrupo where id_grupo  = '" + id.Text + "'";
             SqlConnection objconnect = null;
             SqlCommand objcomando = null;
             objconnect = new SqlConnection(_strconn);
@@ -311,8 +311,7 @@ namespace SCG
         public void SeuMetodo(DataGridViewRow row)
         {
             id.Text = row.Cells["ID"].Value.ToString();
-            nome.Text = row.Cells["Nome Do Usuario"].Value.ToString();
-            tipo.Text = row.Cells["Tipo de Usuario"].Value.ToString();
+            nome.Text = row.Cells["Nome Do Grupo"].Value.ToString();
             novo.Enabled = true;
             alterar.Enabled = true;
             cancelar.Enabled = true;

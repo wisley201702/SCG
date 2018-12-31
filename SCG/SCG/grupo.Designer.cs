@@ -190,6 +190,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "grupo";
             this.Text = "Cadastro de Grupo";
             this.Load += new System.EventHandler(this.grupo_Load);

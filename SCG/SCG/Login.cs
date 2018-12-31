@@ -48,6 +48,7 @@ namespace SCG
             usuario.DisplayMember = "descricao";
             usuario.SelectedItem = "";
             usuario.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+            Conn.Close();
         }
 
         private void ok_Click(object sender, EventArgs e)
