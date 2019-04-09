@@ -1,6 +1,6 @@
 ﻿namespace SCG
 {
-    partial class grupo
+    partial class vendedores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grupo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vendedores));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buscar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.TextBox();
@@ -38,13 +38,13 @@
             this.cancelar = new System.Windows.Forms.Button();
             this.alterar = new System.Windows.Forms.Button();
             this.novo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgusuario = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvendedor = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgusuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvendedor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,10 +58,10 @@
             this.panel1.Controls.Add(this.cancelar);
             this.panel1.Controls.Add(this.alterar);
             this.panel1.Controls.Add(this.novo);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(-2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(636, 28);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // buscar
             // 
@@ -71,7 +71,7 @@
             this.buscar.TabIndex = 15;
             this.buscar.Text = "Buscar";
             this.buscar.UseVisualStyleBackColor = true;
-            this.buscar.Click += new System.EventHandler(this.buscar_Click);
+            this.buscar.Click += new System.EventHandler(this.buscar_Click_1);
             // 
             // id
             // 
@@ -139,66 +139,66 @@
             this.novo.UseVisualStyleBackColor = true;
             this.novo.Click += new System.EventHandler(this.novo_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(79, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // nome
             // 
-            this.nome.Location = new System.Drawing.Point(147, 73);
+            this.nome.Location = new System.Drawing.Point(100, 75);
             this.nome.Name = "nome";
-            this.nome.Size = new System.Drawing.Size(175, 20);
-            this.nome.TabIndex = 14;
+            this.nome.Size = new System.Drawing.Size(219, 20);
+            this.nome.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(103, 76);
+            this.label2.Location = new System.Drawing.Point(97, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nome:";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Nome Vendedor:";
             // 
-            // dgusuario
+            // pictureBox1
             // 
-            this.dgusuario.AllowUserToAddRows = false;
-            this.dgusuario.AllowUserToDeleteRows = false;
-            this.dgusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgusuario.Location = new System.Drawing.Point(335, 37);
-            this.dgusuario.Name = "dgusuario";
-            this.dgusuario.ReadOnly = true;
-            this.dgusuario.Size = new System.Drawing.Size(292, 111);
-            this.dgusuario.TabIndex = 15;
-            this.dgusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgusuario_CellDoubleClick);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(79, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
-            // grupo
+            // dgvendedor
+            // 
+            this.dgvendedor.AllowUserToAddRows = false;
+            this.dgvendedor.AllowUserToDeleteRows = false;
+            this.dgvendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvendedor.Location = new System.Drawing.Point(342, 36);
+            this.dgvendedor.Name = "dgvendedor";
+            this.dgvendedor.ReadOnly = true;
+            this.dgvendedor.Size = new System.Drawing.Size(292, 111);
+            this.dgvendedor.TabIndex = 18;
+            this.dgvendedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvendedor_CellDoubleClick);
+            // 
+            // vendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(639, 170);
-            this.Controls.Add(this.dgusuario);
+            this.ClientSize = new System.Drawing.Size(637, 166);
+            this.Controls.Add(this.dgvendedor);
             this.Controls.Add(this.nome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "grupo";
+            this.Name = "vendedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Grupo";
-            this.Load += new System.EventHandler(this.grupo_Load);
+            this.Text = "vendedores";
+            this.Load += new System.EventHandler(this.vendedores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgusuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvendedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,9 +215,9 @@
         private System.Windows.Forms.Button cancelar;
         private System.Windows.Forms.Button alterar;
         private System.Windows.Forms.Button novo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox nome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgusuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvendedor;
     }
 }

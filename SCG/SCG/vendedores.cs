@@ -12,19 +12,18 @@ using SCG.Properties;
 
 namespace SCG
 {
-    public partial class grupo : Form
+    public partial class vendedores : Form
     {
         public SqlConnection Conn = new SqlConnection(Settings.Default.SCGConnectionString);
         public SqlCommand comando = new SqlCommand();
         public SqlDataReader dr;
-
-        public grupo()
+        public vendedores()
         {
             InitializeComponent();
             comando.Connection = Conn;
         }
 
-        private void grupo_Load(object sender, EventArgs e)
+        private void vendedores_Load(object sender, EventArgs e)
         {
             //Função da Tela Iniciar
             buscar1();
@@ -41,7 +40,6 @@ namespace SCG
 
             nome.Enabled = false;
             nome.Text = String.Empty;
-
         }
 
         private void novo_Click(object sender, EventArgs e)
@@ -59,7 +57,6 @@ namespace SCG
             nome.Focus();
             nome.Enabled = true;
             nome.Text = string.Empty;
-
         }
 
         private void alterar_Click(object sender, EventArgs e)
@@ -71,7 +68,7 @@ namespace SCG
             cancelar.Enabled = true;
 
             Conn.Open();
-            comando.CommandText = "select * FROM tbgrupo where nome='" + nome.Text + "'";
+            comando.CommandText = "select * FROM tbvendedor where nome='" + nome.Text + "'";
             dr = comando.ExecuteReader();
 
 
@@ -119,7 +116,7 @@ namespace SCG
                 else if (nome.Text != "")
                 {
                     Conn.Open();
-                    comando.CommandText = "INSERT INTO tbgrupo (nome) values ('" + nome.Text + "')";
+                    comando.CommandText = "INSERT INTO tbvendedor (nome) values ('" + nome.Text + "')";
                     comando.ExecuteNonQuery();
                     Conn.Close();
                     MessageBox.Show("Salvo Com Sucesso!");
@@ -150,7 +147,7 @@ namespace SCG
                 else if (id.Text != "" && nome.Text != "")
                 {
                     Conn.Open();
-                    comando.CommandText = "UPDATE tbgrupo SET nome = '" +nome.Text + "'where id_grupo='" + id.Text + "'";
+                    comando.CommandText = "UPDATE tbvendedor SET nome = '" + nome.Text + "'where id_vendedor='" + id.Text + "'";
                     comando.ExecuteNonQuery();
                     Conn.Close();
                     MessageBox.Show("Atualizado com sucesso!");
@@ -181,7 +178,7 @@ namespace SCG
             CodExclusao = id.Text;
             Conn.Open();
 
-            comando.CommandText = "select * FROM tbgrupo where id_grupo='" + CodExclusao + "'";
+            comando.CommandText = "select * FROM tbvendedor where id_vendedor='" + CodExclusao + "'";
 
             dr = comando.ExecuteReader();
 
@@ -202,12 +199,12 @@ namespace SCG
             }
             else if (Validador == CodExclusao)
             {
-                if (MessageBox.Show("Tem certeza que deseja Excluir o Grupo?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Tem certeza que deseja Excluir o Vendedor?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Conn.Open();
-                    comando.CommandText = "delete from tbgrupo where id_grupo='" + id.Text + "'";
+                    comando.CommandText = "delete from tbvendedor where id_vendedor='" + id.Text + "'";
                     dr = comando.ExecuteReader();
-                    MessageBox.Show("Grupo Excluido Com Sucesso!");
+                    MessageBox.Show("Vendedor Excluido Com Sucesso!");
                     Conn.Close();
                     buscar1();
 
@@ -225,31 +222,13 @@ namespace SCG
                 buscar1();
             }
         }
-
-        private void buscar_Click(object sender, EventArgs e)
-        {
-            if (id.Text == "")
-            {
-                //CONSULTA SEM INFORMAÇÕES DO GRUPO
-                buscar1();
-                excluir.Enabled = true;
-
-            }
-            if (id.Text != "")
-            {
-                buscar2();
-                string _strconn = Settings.Default.SCGConnectionString;
-                excluir.Enabled = true;
-
-            }
-        }
         //CONSULTA SEM INFORMAÇÕES DO CLIENTE
         public void buscar1()
 
         {
             string _strconn = Settings.Default.SCGConnectionString;
             Conn.Open();
-            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbgrupo";
+            string strsql = "select id_vendedor as 'ID',nome as 'Nome Do Vendedor' from tbvendedor";
             SqlConnection objconnect = null;
             SqlCommand objcomando = null;
             objconnect = new SqlConnection(_strconn);
@@ -262,7 +241,7 @@ namespace SCG
                 SqlDataAdapter objAdp = new SqlDataAdapter(objcomando);
                 DataTable drlista = new DataTable();
                 objAdp.Fill(drlista);
-                dgusuario.DataSource = drlista;
+                dgvendedor.DataSource = drlista;
                 Conn.Close();
 
             }
@@ -278,7 +257,7 @@ namespace SCG
         {
             string _strconn = Settings.Default.SCGConnectionString;
             Conn.Open();
-            string strsql = "select id_grupo as 'ID',nome as 'Nome Do Grupo' from tbgrupo where id_grupo  = '" + id.Text + "'";
+            string strsql = "select id_vendedor as 'ID',nome as 'Nome Do Vendedor' from tbvendedor where id_vendedor  = '" + id.Text + "'";
             SqlConnection objconnect = null;
             SqlCommand objcomando = null;
             objconnect = new SqlConnection(_strconn);
@@ -288,7 +267,7 @@ namespace SCG
                 SqlDataAdapter objAdp = new SqlDataAdapter(objcomando);
                 DataTable drlista = new DataTable();
                 objAdp.Fill(drlista);
-                dgusuario.DataSource = drlista;
+                dgvendedor.DataSource = drlista;
 
             }
             catch
@@ -299,10 +278,11 @@ namespace SCG
             Conn.Close();
         }
 
-        private void dgusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvendedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //pega a linha onde foi originado o evento
-            var row = dgusuario.Rows[e.RowIndex];
+            var row = dgvendedor.Rows[e.RowIndex];
 
 
             //passa para um método responsável por preencher todos os textboxes  
@@ -311,7 +291,7 @@ namespace SCG
         public void SeuMetodo(DataGridViewRow row)
         {
             id.Text = row.Cells["ID"].Value.ToString();
-            nome.Text = row.Cells["Nome Do Grupo"].Value.ToString();
+            nome.Text = row.Cells["Nome Do Vendedor"].Value.ToString();
             novo.Enabled = true;
             alterar.Enabled = true;
             cancelar.Enabled = true;
@@ -320,6 +300,24 @@ namespace SCG
             buscar.Enabled = true;
 
 
+        }
+
+        private void buscar_Click_1(object sender, EventArgs e)
+        {
+            if (id.Text == "")
+            {
+                //CONSULTA SEM INFORMAÇÕES DO VENDEDOR
+                buscar1();
+                excluir.Enabled = true;
+
+            }
+            if (id.Text != "")
+            {
+                buscar2();
+                string _strconn = Settings.Default.SCGConnectionString;
+                excluir.Enabled = true;
+
+            }
         }
     }
 }

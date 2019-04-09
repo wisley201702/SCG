@@ -66,6 +66,9 @@ namespace SCG
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //int id_modulo = 5;
+            vendedores frm = new vendedores();
+            frm.Show();
+            Visible = true;
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
